@@ -12,7 +12,7 @@ rain <- c(3,5,10.1,6)
 rain_scaled <- 5 * rain
 ```
 
-## Create Matrices
+## Create matrices
 
 ```{r}
 # create sequence of values
@@ -37,4 +37,37 @@ my_matrix + matrix_a
 my_matrix - matrix_a
 ```
 
-## Matrix Multiplication
+## Matrix multiplication
+
+```{r}
+# create matrices 
+cats <- matrix(data = c(0, 4, 1, 7), nrow = 2, ncol = 2, byrow = TRUE)
+dogs <- matrix(data = c(3, 5, 8, 4), nrow = 2, ncol = 2, byrow = TRUE)
+
+# multipy the matrices
+dogs %*% cats
+```
+
+## Leslie matrix example
+
+```{r}
+insect_leslie <- matrix(data = c(0, 0, 600, 0.2, 0, 0, 0, 0.08, 0), 
+                        nrow = 3, 
+                        ncol = 3, 
+                        byrow = TRUE)
+
+# initial values
+insect_y0 <- c(12000, 700, 500)
+```
+
+Find the population structure for each life stage at t=1 year:
+
+```{r}
+insect_y1 <- insect_leslie %*% insect_y0
+```
+
+Find the population structure for each life stage at t = 2 years:
+
+```{r}
+insect_y2 <- insect_leslie %*% insect_y1
+```
