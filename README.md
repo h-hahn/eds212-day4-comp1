@@ -1,2 +1,2 @@
-# eds212-day4-comp1
-Day four of EDS 212 - morning
+# EDS 212 Day 4 Computational Session 1
+Some matrices 
